@@ -1,0 +1,211 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7178907090163721962
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5353013976100139478, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976100139478, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976128240557, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -306
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976128240557, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 133
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634968, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_Name
+      value: waktu_habis_cocokan
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634968, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976262634969, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976478297450, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_text
+      value: WAKTU MENCOCOKAN HABIS
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976478297450, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190335
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976478297450, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976478297450, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976478297450, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976478297450, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976478297450, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976478297450, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_textAlignment
+      value: 514
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976478297453, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 28.899994
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976478297453, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 533.78827
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013976478297453, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 133
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013977322636037, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353013977322636037, guid: 0bccac80d161826479a85755e65d47f1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: waktupenjelesaiancocokan
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0bccac80d161826479a85755e65d47f1, type: 3}

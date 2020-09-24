@@ -1,0 +1,158 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/main_menu.unity
+    guid: 2ae44685c766b3341863bfb7c64ccdf3
+  - enabled: 0
+    path: Assets/Scenes/catatan.unity
+    guid: 5ef2b1abffad05343aac13b2c1152a07
+  - enabled: 0
+    path: Assets/Scenes/level1_resize.unity
+    guid: 260780c03888b2b4bb7cf20a195ad3a2
+  - enabled: 0
+    path: Assets/Scenes/level2_resize.unity
+    guid: a1b96358a1034614db2a65d18e2327e0
+  - enabled: 0
+    path: Assets/Scenes/level3_resize.unity
+    guid: 589867c078a362c419b7ac453483160f
+  - enabled: 0
+    path: Assets/Scenes/level4A_resize.unity
+    guid: df25832c723f6d945bf516538f84bdb4
+  - enabled: 0
+    path: Assets/Scenes/level4B_resize.unity
+    guid: 6c58a5e6678afaa46b3fb770eb18ad39
+  - enabled: 0
+    path: Assets/Scenes/level5A_resize.unity
+    guid: a7f8ef8e1b936f74ea6187dfd43c9838
+  - enabled: 0
+    path: Assets/Scenes/level5B_resize.unity
+    guid: a3cf3cacfc37f6f459708b8ebbff86f6
+  - enabled: 0
+    path: Assets/Scenes/level6_resize.unity
+    guid: 4245467ad16b39e4d955511bf107681e
+  - enabled: 0
+    path: Assets/Scenes/main_akhir.unity
+    guid: 760dedd0cf9a58c4c805a785258653b7
+  - enabled: 0
+    path: Assets/Scenes/identitas.unity
+    guid: 37a3906800ab7fb4ea1fec792a9701a2
+  - enabled: 0
+    path: Assets/Scenes/level1.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Scenes/level1_1.unity
+    guid: ab303f443bd97414da93ebc7c350ba2b
+  - enabled: 0
+    path: Assets/Scenes/level2.unity
+    guid: 0b25b8fd451b59d4db2e6fef6840b717
+  - enabled: 0
+    path: Assets/Scenes/level3.unity
+    guid: c26a6b080831efe4aa57591eb7a85ec4
+  - enabled: 0
+    path: Assets/Scenes/level4.unity
+    guid: 4206c2e809eb57a4a9025538dd25df84
+  - enabled: 0
+    path: Assets/Scenes/level4_2.unity
+    guid: b2faea649f58a1a4597f356b4fce61da
+  - enabled: 0
+    path: Assets/Scenes/level5.unity
+    guid: e4ddd1ba68a8e4449890f0c17d2c8d89
+  - enabled: 0
+    path: Assets/Scenes/level5_2.unity
+    guid: 7cad2567021b9bc4892c36a119bd8bce
+  - enabled: 0
+    path: Assets/Scenes/magnet.unity
+    guid: 836e8df170f64f748a740eb8ae7e4d8a
+  - enabled: 0
+    path: Assets/Scenes/berjalancoba.unity
+    guid: f2dc677d3d0babd45a7a441e6570205e
+  - enabled: 0
+    path: Assets/Scenes/level6.unity
+    guid: 87978ffcdd300464b832b938cf48a1d3
+  - enabled: 0
+    path: Assets/Scenes/level1bayangan.unity
+    guid: 42b94fdc5af593b4d95447887a863086
+  - enabled: 0
+    path: Assets/Scenes/cobaSS.unity
+    guid: 8344621178edbfc47806a29a1c73bda5
+  - enabled: 0
+    path: Assets/Scenes/level6depan.unity
+    guid: 061c9e74b2bebc144a64adbd884eb7ba
+  - enabled: 0
+    path: Assets/Scenes/level6fix 1.unity
+    guid: 020503481f8ca0546b0257f524c14811
+  - enabled: 0
+    path: Assets/Scenes/level6akhir.unity
+    guid: 23a48c70255b9124ab6d0324e8244acb
+  - enabled: 0
+    path: Assets/Scenes/level1_cobascroll.unity
+    guid: 666d553ec01aeda4f87ec98d78ddb00c
+  - enabled: 0
+    path: Assets/Scenes/video.unity
+    guid: e168f0ba95c747041b77e5bfc0f74e3f
+  - enabled: 0
+    path: Assets/Scenes/joint.unity
+    guid: 2a24e324e98b34a47971f6304b151946
+  - enabled: 0
+    path: Assets/Scenes/level1_dengan_magnet.unity
+    guid: da32478546fcc69478f5ef0abd72b79e
+  - enabled: 0
+    path: Assets/Scenes/joint 1.unity
+    guid: b27a51d5012c6bf408cf59083da2d029
+  - enabled: 0
+    path: Assets/Scenes/WithMagnet/level1_tanoto_magnet.unity
+    guid: eced3f3efa4f73f46bcc30fb13f4f4af
+  - enabled: 0
+    path: Assets/Scenes/WithMagnet/level2_tanoto_magnet.unity
+    guid: 4d5b967a26e1d7e449e8e3eeaa2e0a17
+  - enabled: 0
+    path: Assets/Scenes/WithMagnet/level3_tanoto_magnet.unity
+    guid: 69a3592512a34284695fb5b8a53e005e
+  - enabled: 0
+    path: Assets/Scenes/WithMagnet/level4A_tanoto_magnet.unity
+    guid: 19383e87ba64fa048b960f4ea3cdddea
+  - enabled: 0
+    path: Assets/Scenes/WithMagnet/level4B_tanoto_magnet.unity
+    guid: f32a9362daa8dbd478fb23f78481e760
+  - enabled: 0
+    path: Assets/Scenes/WithMagnet/level5A_tanoto_magnet.unity
+    guid: 2c8cc44d1d43cf843bd172839e89bfb1
+  - enabled: 0
+    path: Assets/Scenes/WithMagnet/level5B_tanoto_magnet.unity
+    guid: b814c935874023540943f05e1a54f49c
+  - enabled: 0
+    path: Assets/Scenes/WithMagnet/level6_tanoto_magnet.unity
+    guid: 0c28ab4795995d144bf992d0f344257f
+  - enabled: 1
+    path: Assets/Scenes/WithMagnet/main_menu_magnet.unity
+    guid: 3a24c2056ef2ff04790e5628ccd1b9b4
+  - enabled: 1
+    path: Assets/Scenes/WithMagnet/catatan_magnet.unity
+    guid: 2eddb3a9bd85ee54db67b9f17a404bfd
+  - enabled: 1
+    path: Assets/Scenes/WithMagnet/Revisi/level1_tanoto.unity
+    guid: 32c1e3f42c8130d4cad7cb7ceecbec3c
+  - enabled: 1
+    path: Assets/Scenes/WithMagnet/Revisi/level2_tanoto.unity
+    guid: 744a6873eb394bb4dae0e86b48877beb
+  - enabled: 1
+    path: Assets/Scenes/WithMagnet/Revisi/level3_tanoto.unity
+    guid: 9544643bade91744c9d2cee6ec9ad81d
+  - enabled: 1
+    path: Assets/Scenes/WithMagnet/Revisi/level4_tanoto.unity
+    guid: ea0d87d26b8bef84989c485f17031c40
+  - enabled: 1
+    path: Assets/Scenes/WithMagnet/Revisi/level5_tanoto.unity
+    guid: f855cb1dcdb6828419baeaee952bf71e
+  - enabled: 1
+    path: Assets/Scenes/WithMagnet/Revisi/level6_tanoto.unity
+    guid: 36290d6cce864aa4b9102f83d05573c9
+  - enabled: 1
+    path: Assets/Scenes/WithMagnet/main_akhir_magnet.unity
+    guid: fa2f67c648447cb428fee6171927edb6
+  m_configObjects: {}
