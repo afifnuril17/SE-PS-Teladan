@@ -2960,6 +2960,10 @@ MonoBehaviour:
   drag_collider: {fileID: 1014432385}
   btn_drag_all: {fileID: 1813843818}
   Drag: 0
+  rbg: []
+  warnaHitam: []
+  clear: 0
+  Kliksatu: 0
 --- !u!1 &202424339
 GameObject:
   m_ObjectHideFlags: 0
