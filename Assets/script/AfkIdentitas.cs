@@ -25,7 +25,7 @@ public class AfkIdentitas : MonoBehaviour
                 time = 0;
             }
 
-            if (myTime == 600)
+            if (myTime == 180)
             {
                 Application.Quit();
             }
