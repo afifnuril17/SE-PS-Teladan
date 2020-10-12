@@ -113,6 +113,9 @@ public class SendBiodataMagnet : MonoBehaviour
                     if (inputan_keAPi[j].transform.Find("InputField").GetComponent<InputField>().text == "")
                     {
                         textwarning = true;
+                        //Debug.Log("kosong" + inputan_keAPi[j].name);
+                        break;
+
                     }
                     else
                     {
@@ -230,23 +233,18 @@ public class SendBiodataMagnet : MonoBehaviour
         {
             Debug.Log("Received: " + biodata.downloadHandler.text);
 
-            for (int j = 0; j <= labelnya.Length - 1; j++)
+            if (textwarning == true)
             {
-                if (textwarning == true)
-                {
-                    loading.SetActive(false);
+                loading.SetActive(false);
 
-                    warning.text = "Biodata harus disi";
-                }
-                else
-                {
-                    loading.SetActive(false);
-
-                    SceneManager.LoadScene("catatan_magnet");
-                }
+                warning.text = "Biodata harus disi";
             }
+            else
+            {
+                loading.SetActive(false);
 
-
+                SceneManager.LoadScene("catatan_magnet");
+            }
         }
     }
 }

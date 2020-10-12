@@ -19,6 +19,10 @@ public class CapitalFirstCase : MonoBehaviour
         kata = Regex.Replace(kata, @"[0-9]", "");
         Inputan.text = kata;
     }
+    public void EndEdit()
+    {
+        Inputan.text = Inputan.text.Trim();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -27,7 +31,7 @@ public class CapitalFirstCase : MonoBehaviour
 
         if (str.Length == 0)
         {
-            Debug.Log("Empty String");
+            //Debug.Log("Empty String");
 
         }
         else if (str.Length == 1)
@@ -39,6 +43,7 @@ public class CapitalFirstCase : MonoBehaviour
             Inputan.text = char.ToUpper(str[0]) + str.Substring(1).ToString();
 
         }
+        
         
     }
 
