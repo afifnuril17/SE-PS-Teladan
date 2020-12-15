@@ -3516,6 +3516,10 @@ MonoBehaviour:
   drag_collider: {fileID: 166321615}
   btn_drag_all: {fileID: 1673269189}
   Drag: 0
+  rbg: []
+  warnaHitam: []
+  clear: 0
+  Kliksatu: 0
 --- !u!1 &203927235
 GameObject:
   m_ObjectHideFlags: 0
@@ -9584,6 +9588,7 @@ GameObject:
   - component: {fileID: 519420034}
   - component: {fileID: 519420033}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9696,6 +9701,18 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1b541a3b8587d640ae27373cc6852a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaa1e28f8f158ae4490dff438adf5949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &526394552
