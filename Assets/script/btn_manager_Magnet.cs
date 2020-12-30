@@ -19,8 +19,12 @@ public class btn_manager_Magnet : MonoBehaviour
 {
     public static btn_manager_Magnet Control;
     public string token;
-    public string id;
+    public string id_peserta;
+    public string id_event;
+    public string id_game;
 
+    public List<string> scene;
+    public int sceneInt;
 
     public Text ide;
     public Text alasan;
@@ -125,34 +129,6 @@ public class btn_manager_Magnet : MonoBehaviour
 
     public GameObject waktu_hampir_habis;
 
-    public GameObject Nama;
-    public GameObject Tgl_lahir;
-    public GameObject Jenis_kelamin;
-    public GameObject Pendidikan;
-    public GameObject Tempat_Lahir;
-    public GameObject Alamat;
-    public GameObject Tgl_tes;
-    public GameObject Kewarganegaraan;
-    public GameObject Jabatan;
-    public GameObject Departement;
-    public GameObject Devisi;
-    public GameObject Jenis_identitas;
-    public GameObject Agama;
-    public GameObject Email;
-    public GameObject Institusi_pendidikan;
-    public GameObject Jurusan;
-    public GameObject Mengetahui_lowongan;
-    public GameObject Penyakit_berat;
-    public GameObject No_sipp;
-    public GameObject No_telp;
-    public GameObject NPM;
-    public GameObject Tahun_masuk;
-    public GameObject Tahun_lulus;
-    public GameObject Status_Pernikahan;
-    public GameObject Alamat_Identitas;
-    public GameObject Alamat_Tinggal;
-
-
     public Text warningIde;
     public Text warningTentang;
 
@@ -168,12 +144,18 @@ public class btn_manager_Magnet : MonoBehaviour
 
     public GameObject[] tanggal_text;
 
+    //COBA KELOMPOKAN AB,C,D EDIT AFIF
+    public int[] game_id;
+
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-        if (Control == null)
+        if (SceneManager.GetActiveScene().name == "main_menu_magnet")
         {
-            Control = this;
+            DontDestroyOnLoad(gameObject);
+            if (Control == null)
+            {
+                Control = this;
+            }
         }
     }
 
@@ -351,7 +333,15 @@ public class btn_manager_Magnet : MonoBehaviour
         {
             loading.SetActive(true);
 
-            SceneManager.LoadScene("level1_tanoto");
+            if (btn_manager_Magnet.Control.sceneInt < btn_manager_Magnet.Control.scene.Count)
+            {
+                SceneManager.LoadScene(btn_manager_Magnet.Control.scene[btn_manager_Magnet.Control.sceneInt]);
+                btn_manager_Magnet.Control.sceneInt++;
+            }
+            else
+            {
+                SceneManager.LoadScene("main_akhir_tanoto");
+            }
         }
         else
         {
@@ -460,7 +450,7 @@ public class btn_manager_Magnet : MonoBehaviour
         form.AddField("myField", "myData");
 
         using (
-            UnityWebRequest www = UnityWebRequest.Post(Config.Control.urlLogin + "name=" + nama + "&password=" + pass + "", form))
+            UnityWebRequest www = UnityWebRequest.Post(Config.Control.urlLogin + "username=" + nama + "&password=" + pass + "", form))
         {
             yield return www.SendWebRequest();
 
@@ -486,8 +476,10 @@ public class btn_manager_Magnet : MonoBehaviour
                 JSONNode jsonData = JSON.Parse(System.Text.Encoding.UTF8.GetString(www.downloadHandler.data));
 
 
-                token = jsonData["token"];
-                id = jsonData["user_id"];
+                token = jsonData["data"]["token"];
+                id_peserta = jsonData["data"]["id_peserta"];
+                id_event = jsonData["data"]["id_event"];
+                id_game = jsonData["data"]["listGame"][0]["id_game"];
 
                 tokenInput.text = token;
 
@@ -498,24 +490,110 @@ public class btn_manager_Magnet : MonoBehaviour
                 }
                 else
                 {
-                    int namaContoh = jsonData["attribute"]["nama"].Count;
+                    //int namaContoh = jsonData["attribute"]["nama"].Count;
                     //string namaContoh = jsonData["attribute"]["nama"]["attribute"].ToString();
                     //string replaceNama = namaContoh.Replace("{", "");
 
                     //Debug.Log( "jumlah chil nama" +namaContoh);
 
-                    for(int i =0; i<= jsonData["attribute"].Count - 1; i++)
+
+                    /*
+                    for (int i = 0; i < code.Length; i++)
+                    {
+                        if (code[i] == "SFEA")
+                        {
+                            scene.Add("level1_tanoto");
+                            scene.Add("level2_tanoto");
+                            scene.Add("level3_tanoto");
+                        }
+                        if (code[i] == "SFEB")
+                        {
+                            scene.Add("level4_tanoto");
+                            scene.Add("level5_tanoto");
+                            scene.Add("level6_tanoto");
+                        }
+                        if (code[i] == "SFEC")
+                        {
+                            scene.Add("level7_tanoto");
+                        }
+                        if (code[i] == "SFED")
+                        {
+                            scene.Add("level8_tanoto");
+                        }
+                        if (code[i] == "SFEX")
+                        {
+                            scene.Add("level1_tanoto");
+                            scene.Add("level2_tanoto");
+                            scene.Add("level3_tanoto");
+                            scene.Add("level4_tanoto");
+                            scene.Add("level5_tanoto");
+                            scene.Add("level6_tanoto");
+                            scene.Add("level7_tanoto");
+                            scene.Add("level8_tanoto");
+                        }
+                    }
+                    */
+
+                    //=======================================================================================================================
+                    
+                    
+                    for (int i = 0; i < jsonData["data"]["listGame"].Count; i++)
+                    {
+                        for (int j = 0; j < game_id.Length; j++)
+                        {
+                            if (jsonData["data"]["listGame"][i]["id_game"] == game_id[j])
+                            {
+
+                                if (jsonData["data"]["listGame"][i]["code_game"] == "SFEA")
+                                {
+                                    scene.Add("level1_tanoto");
+                                    scene.Add("level2_tanoto");
+                                    scene.Add("level3_tanoto");
+                                }
+                                if (jsonData["data"]["listGame"][i]["code_game"] == "SFEB")
+                                {
+                                    scene.Add("level4_tanoto");
+                                    scene.Add("level5_tanoto");
+                                    scene.Add("level6_tanoto");
+                                }
+                                if (jsonData["data"]["listGame"][i]["code_game"] == "SFEC")
+                                {
+                                    scene.Add("level7_tanoto");
+                                }
+                                if (jsonData["data"]["listGame"][i]["code_game"] == "SFED")
+                                {
+                                    scene.Add("level8_tanoto");
+                                }
+                                if (jsonData["data"]["listGame"][i]["code_game"] == "SFEX")
+                                {
+                                    scene.Add("level1_tanoto");
+                                    scene.Add("level2_tanoto");
+                                    scene.Add("level3_tanoto");
+                                    scene.Add("level4_tanoto");
+                                    scene.Add("level5_tanoto");
+                                    scene.Add("level6_tanoto");
+                                    scene.Add("level7_tanoto");
+                                    scene.Add("level8_tanoto");
+                                }
+                            }
+                        }
+                    }
+
+                    //============================================================================================================================
+                   
+                    for (int i =0; i<= jsonData["data"]["biodata"].Count - 1; i++)
                     {
                       //Debug.Log(" text string attribute" + i + " -" + jsonData["attribute"][i].ToString());
 
-                        for(int j = 0; j <= jsonData["attribute"][0].Count - 1; j++)
-                        {
+                        //EDIT AFIF
+                        //for(int j = 0; j <= jsonData["data"]["biodata"].Count - 1; j++)
+                        //{
 
-                            if (jsonData["attribute"][i][j] == "text")
+                            if (jsonData["data"]["biodata"][i][2] == "text")
                             {
-                                labelnya[i].text = jsonData["attribute"][i][1];
+                                labelnya[i].text = jsonData["data"]["biodata"][i][1];
                                 labelnya[i].gameObject.SetActive(true);
-                                labelnya[i].transform.Find("chillAttribute").GetComponent<Text>().text = jsonData["attribute"][i][0];
+                                labelnya[i].transform.Find("chillAttribute").GetComponent<Text>().text = jsonData["data"]["biodata"][i][0];
 
                                 inputan_text[i].SetActive(true);
                                 //inputan_text[i].GetComponent<GridLayoutGroup>().cellSize= new Vector3(350, 100);
@@ -525,22 +603,22 @@ public class btn_manager_Magnet : MonoBehaviour
 
                                 inputan_text[i].transform.Find("DatePicker").gameObject.SetActive(false);
                             }
-                            if (jsonData["attribute"][i][j] == "date")
+                            if (jsonData["data"]["biodata"][i][2] == "date")
                             {
-                                labelnya[i].text = jsonData["attribute"][i][1];
+                                labelnya[i].text = jsonData["data"]["biodata"][i][1];
                                 labelnya[i].gameObject.SetActive(true);
-                                labelnya[i].transform.Find("chillAttribute").GetComponent<Text>().text = jsonData["attribute"][i][0];
+                                labelnya[i].transform.Find("chillAttribute").GetComponent<Text>().text = jsonData["data"]["biodata"][i][0];
 
                                 inputan_text[i].SetActive(true);
                                 inputan_text[i].GetComponent<GridLayoutGroup>().cellSize = new Vector3(350, 200);
                                 inputan_text[i].transform.Find("InputField").gameObject.SetActive(false);
                                 inputan_text[i].transform.Find("DatePicker").gameObject.SetActive(true);
                             }
-                            if (jsonData["attribute"][i][j] == "textarea")
+                            if (jsonData["data"]["biodata"][i][2] == "textarea")
                             {
-                                labelnya[i].text = jsonData["attribute"][i][1];
+                                labelnya[i].text = jsonData["data"]["biodata"][i][1];
                                 labelnya[i].gameObject.SetActive(true);
-                                labelnya[i].transform.Find("chillAttribute").GetComponent<Text>().text = jsonData["attribute"][i][0];
+                                labelnya[i].transform.Find("chillAttribute").GetComponent<Text>().text = jsonData["data"]["biodata"][i][0];
 
                                 inputan_text[i].SetActive(true);
                                 inputan_text[i].transform.Find("InputField").gameObject.SetActive(true); 
@@ -549,13 +627,13 @@ public class btn_manager_Magnet : MonoBehaviour
                                 inputan_text[i].transform.Find("DatePicker").gameObject.SetActive(false);
 
                             }
-                            if(jsonData["attribute"][i][j] == "dropdown")
+                            if(jsonData["data"]["biodata"][i][2] == "dropdown")
                             {
                                 Debug.Log("VALUE DROBDON"+ jsonData["attribute"][i][3].Count);
 
-                                labelnya[i].text = jsonData["attribute"][i][1];
+                                labelnya[i].text = jsonData["data"]["biodata"][i][1];
                                 labelnya[i].gameObject.SetActive(true);
-                                labelnya[i].transform.Find("chillAttribute").GetComponent<Text>().text = jsonData["attribute"][i][0];
+                                labelnya[i].transform.Find("chillAttribute").GetComponent<Text>().text = jsonData["data"]["biodata"][i][0];
 
                                 inputan_text[i].SetActive(true);
                                 inputan_text[i].transform.Find("Dropdown").gameObject.SetActive(true);
@@ -565,11 +643,11 @@ public class btn_manager_Magnet : MonoBehaviour
                                 var dropdown = inputan_text[i].transform.Find("Dropdown").GetComponent<Dropdown>();
 
                                 dropdown.options.Clear();;                                
-                                for (int x = 0; x <= jsonData["attribute"][i][3].Count - 1; x++)
+                                for (int x = 0; x <= jsonData["data"]["biodata"][i][3].Count - 1; x++)
                                 {
                                     List<String> valueDropdown = new List<string>();
 
-                                    valueDropdown.Add(jsonData["attribute"][i][3][x]);
+                                    valueDropdown.Add(jsonData["data"]["biodata"][i][3][x]);
 
                                     foreach (var item in valueDropdown)
                                     {
@@ -577,194 +655,10 @@ public class btn_manager_Magnet : MonoBehaviour
                                     }
                                     //dropdown.options.Add(new Drop)
                                 }
-                                
-
-                            }
-
+                              
                         }
                         
                     }
-
-
-
-                    //NamaRoot root = JsonUtility.FromJson<NamaRoot>(jsonData.ToString());
-
-                    //Debug.Log(root);
-                    //Debug.Log("label ke 0 " + root.attribute[0].label);
-
-                    /*
-
-                    if (jsonData["attribute"] == "text")
-                    {
-                        Debug.Log("attribute" + jsonData["attribute"]);
-                    }
-
-                   // string [] namaNama = { jsonData["attribute"].ToString() };
-
-
-                  //  Debug.Log(" nama " + namaNama);
-
-                    string[] attributes = {"nama", "tgl_lahir", "jenis_kelamin", "pendidikan", "tempat_lahir", "alamat","tgl_tes","kewarganegaraan","jabatan","departement","devisi","no_sipp","jenis_identitas", "alamat_identitas", "alamat_tinggal","status_pernikahan","no_telp","agama","email","institusi_pendidikan","jurusan","tahun_masuk","tahun_lulus","mengetahui_lowongan","penyakit_berat","npm"};
-
-                    string[] namaChid = { "attribute", "label", "type", "validator" };
-
-                    for(int i = 0;i <= attributes.Length-1;i++)
-                    {
-                        
-                        //Debug.Log(jsonData[attributes[0]]);
-                        if (jsonData["attribute"][attributes[i]][namaChid[2]] == "text")
-                        {
-
-                            if(jsonData["attribute"][attributes[i]][namaChid[1]] == "Nama")
-                            {
-                                 Nama.SetActive(true);
-                            }
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Tempat Lahir")
-                            {
-                                Tempat_Lahir.SetActive(true);
-                            }
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Kewarganegaraan")
-                            {
-                                Kewarganegaraan.SetActive(true);
-                            }
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Jabatan")
-                            {
-                                
-                                Jabatan.SetActive(true);
-                            }
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Departement")
-                            {
-                                Departement.SetActive(true);
-                            } 
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Devisi")
-                            {
-                                Devisi.SetActive(true);
-                            }
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Jenis Identitas")
-                            {
-                                Jenis_identitas.SetActive(true);
-                            }
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Agama")
-                            {
-                                Agama.SetActive(true);
-                            }
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Email")
-                            {
-                                Email.SetActive(true);
-                            } 
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Institusi Pendidikan")
-                            {
-                                Institusi_pendidikan.SetActive(true);
-                            } 
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Jurusan")
-                            {
-                                Jurusan.SetActive(true);
-                            } 
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Mengetahui Lowongan")
-                            {
-                                Mengetahui_lowongan.SetActive(true);
-                            } 
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Penyakit Berat")
-                            {
-                                Penyakit_berat.SetActive(true);
-                            }
-                        }
-                        if (jsonData["attribute"][attributes[i]][namaChid[2]] == "integer")
-                        {
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Nomor SIPP")
-                            {
-                                No_sipp.SetActive(true);
-                            }
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "No Telpon")
-                            {
-                                No_telp.SetActive(true);
-                            }if (jsonData["attribute"][attributes[i]][namaChid[1]] == "NPM")
-                            {
-                                NPM.SetActive(true);
-                            }
-
-                        }
-                        if(jsonData["attribute"][attributes[i]][namaChid[2]] == "date")
-                        {
-
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Tgl Lahira")
-                            {
-                                Tgl_lahir.SetActive(true);
-                            }
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Tgl Tes")
-                            {
-                                Tgl_tes.SetActive(true);
-                            }
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Tahun Masuk")
-                            {
-                                Tahun_masuk.SetActive(true);
-                            }
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Tahun Lulus")
-                            {
-                                Tahun_lulus.SetActive(true);
-                            }
-
-                            //labelTgl_lahir.text = jsonData["attribute"][attributes[i]][namaChid[1]];
-
-                            //Debug.Log("input date");
-                        } 
-                        if(jsonData["attribute"][attributes[i]][namaChid[2]] == "radio")
-                        {
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Gender")
-                            {
-                                Jenis_kelamin.SetActive(true);
-                            }
-                            //labelJenis_kelamin.text = jsonData["attribute"][attributes[i]][namaChid[1]];
-
-                            //Debug.Log("input radio");
-                        }
-                        if(jsonData["attribute"][attributes[i]][namaChid[2]] == "dropdown")
-                        {
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Pendidikan Terakhir")
-                            {
-                                Pendidikan.SetActive(true);
-                            }
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Status Pernikahan")
-                            {
-                                Status_Pernikahan.SetActive(true);
-                            }
-                           //labelPendidikan.text = jsonData["attribute"][attributes[i]][namaChid[1]];
-
-                            //Debug.Log("input dropdown");
-                        }
-                        if(jsonData["attribute"][attributes[i]][namaChid[2]] == "textarea")
-                        {
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Alamat Tinggal")
-                            {
-                                Alamat.SetActive(true);
-                            }
-                            if (jsonData["attribute"][attributes[i]][namaChid[1]] == "Alamat Identitas")
-                            {
-                                Alamat_Identitas.SetActive(true);
-                            }
-
-                            //labelAlamat.text = jsonData["attribute"][attributes[i]][namaChid[1]];
-
-                            //Debug.Log("input textarea");
-
-                        }
-
-                    }
-
-                    string value =  "replaceNama";
-                    //string[] result = namaContoh.Split(',');
-
-                    ///Debug.Log(result);
-
-
-                    char[] array = value.ToCharArray();
-
-                    for(int i = 0; i< array.Length; i++)
-                    {
-                        char letter = array[i];
-                        //Debug.Log("letter : " + letter);
-                    }
-                    */
                 }
 
             }

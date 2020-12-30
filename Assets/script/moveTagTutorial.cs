@@ -42,14 +42,10 @@ public class moveTagTutorial : MonoBehaviour, IPointerDownHandler, IDragHandler,
 
             if (GameObject.Find(tempat).transform.parent != GameObject.Find("objek_area_scroll").transform)
             {
-                for (int i = 0; i <= bentuk.Length - 1; i++)
+                if (timeSinceLastClick <= DOUBLE_CLICK_TIME)
                 {
-                    if (timeSinceLastClick <= DOUBLE_CLICK_TIME)
+                    if (warnaHitam.Count != 0)
                     {
-                        if(selesai1 == false)
-                        {
-                            selesai.SetActive(true);
-                        }
                         GameObject.Find("btn_up").GetComponent<Button>().enabled = true;
                         batas_drag.SetActive(false);
                         drag_collider.SetActive(true);
@@ -64,23 +60,32 @@ public class moveTagTutorial : MonoBehaviour, IPointerDownHandler, IDragHandler,
                             rbg.Clear();
                             clear = true;
                         }
-
-                        if (bentuk[i].transform.parent == GameObject.Find("hahaha").transform || bentuk[i].transform.parent == GameObject.Find("objek_dibuat").transform)
+                        for (int i = 0; i <= bentuk.Length - 1; i++)
                         {
+                            if (bentuk[i].transform.parent == GameObject.Find("hahaha").transform || bentuk[i].transform.parent == GameObject.Find("objek_dibuat").transform)
+                            {
 
-                            bentuk[i].transform.SetParent(GameObject.Find("objek_dibuat").transform);
-                            bentuk[i].tag = "Untagged";
-                            bentuk[i].GetComponent<Image>().color = Color.white;
-                            bentuk[i].GetComponent<ItemIDragHandler_Tutorial>().enabled = true;
-                            ButtonAction = 0;
+                                bentuk[i].transform.SetParent(GameObject.Find("objek_dibuat").transform);
+                                bentuk[i].tag = "Untagged";
+                                bentuk[i].GetComponent<Image>().color = Color.white;
+                                bentuk[i].GetComponent<ItemIDragHandler_Tutorial>().enabled = true;
+                                ButtonAction = 0;
+                            }
                         }
-                        if(control_bentuk.GetComponent<Bentuk_tutorial>().Lanjut == false)
+                        if (tutorial.GetComponent<Tutorial>().finish == true)
                         {
-                            control_bentuk.GetComponent<Bentuk_tutorial>().FinishTutorial();
+                            if (selesai1 == false)
+                            {
+                                selesai.SetActive(true);
+                                control_bentuk.GetComponent<Bentuk_tutorial>().FinishTutorial();
+                            }
                         }
-                        Debug.Log("KLIK 2 KALI" + tempat);
                     }
-                    else
+                    Debug.Log("KLIK 2 KALI" + tempat);
+                }
+                else
+                {
+                    for (int i = 0; i <= bentuk.Length - 1; i++)
                     {
                         if (Drag == true)
                         {
@@ -115,12 +120,11 @@ public class moveTagTutorial : MonoBehaviour, IPointerDownHandler, IDragHandler,
 
                             }
                         }
-                        Debug.Log("KLIK 1 KALI" + tempat);
                     }
-
-                    lastClickTime = Time.time;
+                    Debug.Log("KLIK 1 KALI" + tempat);
                 }
-               
+
+                lastClickTime = Time.time;
             }
         }
     }

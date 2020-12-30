@@ -56,7 +56,7 @@ public class scrollrectpos5B : MonoBehaviour
     void Update()
     {
         ups = ups + 1;
-        Debug.Log("UPS" + ups);
+        //Debug.Log("UPS" + ups);
         t = t + 1;
         if (up == true)
         {
@@ -100,7 +100,7 @@ public class scrollrectpos5B : MonoBehaviour
             {
                 if (bentuk_image[i].transform.parent == scroll.transform)
                 {
-                    Debug.Log("kebawah" + i);
+                    //Debug.Log("kebawah" + i);
                     //bentuk_image[i].GetComponent<ItemIDragHandler3_rotate>().enabled = false;
                     bentuk_image[i].GetComponent<ItemIDragHandler5B_rotate>().btn_rotate.SetActive(false);
                     bentuk_image[i].GetComponent<ItemIDragHandler5B_rotate>().btn_flip.SetActive(false);

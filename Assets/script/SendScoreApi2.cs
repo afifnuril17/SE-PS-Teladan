@@ -34,7 +34,7 @@ public class SendScoreApi2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tnya = TimePlay.GetComponent<timer4B>().detik;
+        tnya = (int)TimePlay.GetComponent<timer4B>().myInt;
     }
 
     public void send()

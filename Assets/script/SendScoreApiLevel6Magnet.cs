@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
-using System.IO;
 using UnityEngine.SceneManagement;
 
 [Serializable]
@@ -39,19 +37,6 @@ public class SendScoreApiLevel6Magnet : MonoBehaviour
     public GameObject level6akhir;
     public GameObject levelterakhir;
     public Text warningTentang;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //tnya = TimePlay.GetComponent<timeCoundown>().detik;
-
-    }
 
     public void send()
     {
@@ -106,8 +91,18 @@ public class SendScoreApiLevel6Magnet : MonoBehaviour
         //File.WriteAllBytes(Application.dataPath + "/../"+ timeStamp + ".jpeg", bytes);
 
         WWWForm form = new WWWForm();
-        form.AddField("token", tokenLogin.text);
-        form.AddBinaryData("image", bytes, timeStamp + ".jpeg");
+        //===========================================================================================================//
+        //EDIT AFIF ALLGAME
+
+        form.AddField("token", btn_manager_Magnet.Control.token);
+        form.AddField("id_event", btn_manager_Magnet.Control.id_event);
+        form.AddField("id_peserta", btn_manager_Magnet.Control.id_peserta);
+        form.AddField("id_game", btn_manager_Magnet.Control.id_game);
+        form.AddField("nama_hirarki", "level_8");
+        form.AddBinaryData("nama_file", bytes, timeStamp + ".jpeg");
+
+        //===========================================================================================================//
+
 
 
         // Upload to a cgi script
@@ -139,13 +134,11 @@ public class SendScoreApiLevel6Magnet : MonoBehaviour
         myObject.DurasiMain = TimePlay.text.ToString();
         myObject.Skip = SkipText.text.ToString();
 
-        string json = JsonUtility.ToJson(myObject);
+        string json = JsonUtility.ToJson(myObject, true);
+
+        json = "{\"level_8\":" + json + "}";
 
         Debug.Log(json);
-
-        string fileName = idLogin.text + "_" + namaPemain.text + "_" + LevelMain.text + "_checkout_" + tnya.text +".jpeg";
-        string pathToSave = fileName;
-        ScreenCapture.CaptureScreenshot(pathToSave);
 
         //submit ke api( ScreenCapture.CaptureScreenshot(pathToSave);
         yield return new WaitForEndOfFrame();
@@ -153,9 +146,16 @@ public class SendScoreApiLevel6Magnet : MonoBehaviour
 
 
         WWWForm form = new WWWForm();
-        form.AddField("token", tokenLogin.text.ToString());
-        form.AddField("id_user", idLogin.text.ToString());
-        form.AddField("id_game", "1");
+        //===========================================================================================================//
+        //EDIT AFIF ALLGAME
+
+        form.AddField("token", btn_manager_Magnet.Control.token);
+        form.AddField("id_event", btn_manager_Magnet.Control.id_event);
+        form.AddField("id_peserta", btn_manager_Magnet.Control.id_peserta);
+        form.AddField("id_game", btn_manager_Magnet.Control.id_game);
+
+        //===========================================================================================================//
+
         form.AddField("level", LevelMain.text.ToString());
         form.AddField("score", json);
         
@@ -177,8 +177,17 @@ public class SendScoreApiLevel6Magnet : MonoBehaviour
 
             if (tentang.text != "")
             {
-                level6akhir.SetActive(false);
-                levelterakhir.SetActive(true);
+                if (btn_manager_Magnet.Control.sceneInt < btn_manager_Magnet.Control.scene.Count)
+                {
+                    SceneManager.LoadScene(btn_manager_Magnet.Control.scene[btn_manager_Magnet.Control.sceneInt]);
+                    btn_manager_Magnet.Control.sceneInt++;
+                }
+                else
+                {
+                    level6akhir.SetActive(false);
+                    levelterakhir.SetActive(true);
+                }
+                
             }
 
             else

@@ -28,17 +28,10 @@ public class SendScoreApiLevel4AMagnet : MonoBehaviour
     public Text SkipText;
     public int tnya;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        tnya = TimePlay.GetComponent<timer4A>().detik;
-
+        tnya = (int)TimePlay.GetComponent<timer4A>().myInt;
     }
 
     public void send()
@@ -86,8 +79,17 @@ public class SendScoreApiLevel4AMagnet : MonoBehaviour
         //File.WriteAllBytes(Application.dataPath + "/../"+ timeStamp + ".jpeg", bytes);
 
         WWWForm form = new WWWForm();
-        form.AddField("token", tokenLogin.text.ToString());
-        form.AddBinaryData("image", bytes, timeStamp + ".jpeg");
+
+        //===========================================================================================================//
+        //EDIT AFIF ALLGAME
+
+        form.AddField("token", btn_manager_Magnet.Control.token);
+        form.AddField("id_event", btn_manager_Magnet.Control.id_event);
+        form.AddField("id_peserta", btn_manager_Magnet.Control.id_peserta);
+        form.AddField("id_game", btn_manager_Magnet.Control.id_game);
+        form.AddField("nama_hirarki", "level_4");
+        form.AddBinaryData("nama_file", bytes, timeStamp + ".jpeg");
+        //===========================================================================================================//
 
 
         // Upload to a cgi script
@@ -103,9 +105,16 @@ public class SendScoreApiLevel4AMagnet : MonoBehaviour
         else
         {
             Loading.SetActive(false);
-
-            SceneManager.LoadScene("level5_tanoto");
-
+            if(btn_manager_Magnet.Control.sceneInt < btn_manager_Magnet.Control.scene.Count)
+            {
+                SceneManager.LoadScene(btn_manager_Magnet.Control.scene[btn_manager_Magnet.Control.sceneInt]);
+                btn_manager_Magnet.Control.sceneInt++;
+            }
+            else
+            {
+                SceneManager.LoadScene("main_akhir_tanoto");
+            }
+           
             //Debug.Log("Finished Uploading Screenshot");
         }
     }
@@ -117,7 +126,10 @@ public class SendScoreApiLevel4AMagnet : MonoBehaviour
         myObject.DurasiMain = TimePlay.text.ToString();
         myObject.Skip = SkipText.text.ToString();
 
-        string json = JsonUtility.ToJson(myObject);
+        string json = JsonUtility.ToJson(myObject, true);
+
+        json = "{\"level_4\":" + json + "}";
+
 
         Debug.Log(json);
 
@@ -131,9 +143,16 @@ public class SendScoreApiLevel4AMagnet : MonoBehaviour
 
 
         WWWForm form = new WWWForm();
-        form.AddField("token", tokenLogin.text.ToString());
-        form.AddField("id_user", idLogin.text.ToString());
-        form.AddField("id_game", "1");
+        //===========================================================================================================//
+        //EDIT AFIF ALLGAME
+
+        form.AddField("token", btn_manager_Magnet.Control.token);
+        form.AddField("id_event", btn_manager_Magnet.Control.id_event);
+        form.AddField("id_peserta", btn_manager_Magnet.Control.id_peserta);
+        form.AddField("id_game", btn_manager_Magnet.Control.id_game);
+
+        //===========================================================================================================//
+
         form.AddField("level", LevelMain.text.ToString());
         form.AddField("score", json);
         

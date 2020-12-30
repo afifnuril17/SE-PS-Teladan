@@ -21,7 +21,8 @@ public class btn_exit : MonoBehaviour
 
     public void exit()
     {
-        StartCoroutine(UploadExit());
+        //StartCoroutine(UploadExit());
+        Application.Quit();
 
         Debug.Log("Exit");
     }
@@ -41,7 +42,6 @@ public class btn_exit : MonoBehaviour
         }
         else
         {
-            Application.Quit();
             Debug.Log("Received: " + uwr.downloadHandler.text);
         }
     }

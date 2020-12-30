@@ -7479,7 +7479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   token: 
-  id: 
+  id_peserta: 
   tokenText: {fileID: 833916079}
   idText: {fileID: 1837269972}
 --- !u!114 &519420034
@@ -12463,7 +12463,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   token: 
-  id: 
+  id_peserta: 
+  id_event: 
+  id_game: 
+  scene: []
+  sceneInt: 0
   ide: {fileID: 0}
   alasan: {fileID: 0}
   tentang: {fileID: 0}
@@ -12551,6 +12555,7 @@ MonoBehaviour:
   labelnya: []
   inputan_text: []
   tanggal_text: []
+  game_id: 
 --- !u!1 &946564483
 GameObject:
   m_ObjectHideFlags: 0

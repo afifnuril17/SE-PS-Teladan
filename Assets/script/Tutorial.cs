@@ -21,6 +21,7 @@ public class Tutorial : MonoBehaviour
 
     public GameObject panelselesai;
 
+    public bool finish = false;
 
     public void selesai()
     {
@@ -47,6 +48,7 @@ public class Tutorial : MonoBehaviour
     }
     public void Ok5()
     {
+        finish = true;
         panelunselect.SetActive(false);
     }
 

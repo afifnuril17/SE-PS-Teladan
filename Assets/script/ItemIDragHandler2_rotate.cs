@@ -230,7 +230,7 @@ public class ItemIDragHandler2_rotate : MonoBehaviour, IPointerDownHandler, IPoi
 		}
 		else if (clickPointer == 2)
 		{
-			Debug.Log("ButtonAction" + ButtonAction);
+			//Debug.Log("ButtonAction" + ButtonAction);
 			//Debug.Log(Input.GetAxis("Mouse X"));
 
 			//if (Input.GetAxis("Mouse X") != 0)

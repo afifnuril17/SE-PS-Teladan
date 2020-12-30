@@ -18,7 +18,7 @@ public class SendApi5BMagnet
 
 public class SendScoreApiLevel5BMagnet : MonoBehaviour
 {
-
+    public GameObject Loading;
     public Text LevelMain;
     public TextMeshProUGUI TimePlay;
     public Text tokenLogin;
@@ -36,15 +36,14 @@ public class SendScoreApiLevel5BMagnet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tnya = TimePlay.GetComponent<timer5AB>().detik;
-
+        tnya = (int)TimePlay.GetComponent<timer5AB>().myInt;
     }
 
     public void send()
     {
+        Loading.SetActive(true);
         StartCoroutine(PostRequest());
         StartCoroutine(UploadJPG());
-
         string path = Application.dataPath;
         Debug.Log("path" + path);
     }
@@ -71,8 +70,17 @@ public class SendScoreApiLevel5BMagnet : MonoBehaviour
         //File.WriteAllBytes(Application.dataPath + "/../"+ timeStamp + ".jpeg", bytes);
 
         WWWForm form = new WWWForm();
-        form.AddField("token", tokenLogin.text.ToString());
-        form.AddBinaryData("image", bytes, timeStamp + ".jpeg");
+
+        //===========================================================================================================//
+        //EDIT AFIF ALLGAME
+
+        form.AddField("token", btn_manager_Magnet.Control.token);
+        form.AddField("id_event", btn_manager_Magnet.Control.id_event);
+        form.AddField("id_peserta", btn_manager_Magnet.Control.id_peserta);
+        form.AddField("id_game", btn_manager_Magnet.Control.id_game);
+        form.AddField("nama_hirarki", "level_7");
+        form.AddBinaryData("nama_file", bytes, timeStamp + ".jpeg");
+        //===========================================================================================================//
 
 
         // Upload to a cgi script
@@ -81,13 +89,22 @@ public class SendScoreApiLevel5BMagnet : MonoBehaviour
 
         if (w.isNetworkError || w.isHttpError)
         {
+            Loading.SetActive(false);
             Debug.Log(w.error);
         }
         else
         {
-            SceneManager.LoadScene("level6_tanoto_magnet");
+            Loading.SetActive(false);
 
-            Debug.Log("Finished Uploading Screenshot");
+            if (btn_manager_Magnet.Control.sceneInt < btn_manager_Magnet.Control.scene.Count)
+            {
+                SceneManager.LoadScene(btn_manager_Magnet.Control.scene[btn_manager_Magnet.Control.sceneInt]);
+                btn_manager_Magnet.Control.sceneInt++;
+            }
+            else
+            {
+                SceneManager.LoadScene("main_akhir_tanoto");
+            }
         }
     }
 
@@ -98,13 +115,11 @@ public class SendScoreApiLevel5BMagnet : MonoBehaviour
         myObject.DurasiMain = TimePlay.text.ToString();
         myObject.Skip = SkipText.text.ToString();
 
-        string json = JsonUtility.ToJson(myObject);
+        string json = JsonUtility.ToJson(myObject, true);
+
+        json = "{\"level_7\":" + json + "}";
 
         Debug.Log(json);
-
-        string fileName = idLogin.text + "_" + namaPemain.text + "_" + LevelMain.text + "_checkout_" + tnya.ToString() +".jpeg";
-        string pathToSave = fileName;
-        ScreenCapture.CaptureScreenshot(pathToSave);
 
         //submit ke api( ScreenCapture.CaptureScreenshot(pathToSave);
         yield return new WaitForEndOfFrame();
@@ -112,9 +127,16 @@ public class SendScoreApiLevel5BMagnet : MonoBehaviour
 
 
         WWWForm form = new WWWForm();
-        form.AddField("token", tokenLogin.text.ToString());
-        form.AddField("id_user", idLogin.text.ToString());
-        form.AddField("id_game", "1");
+        //===========================================================================================================//
+        //EDIT AFIF ALLGAME
+
+        form.AddField("token", btn_manager_Magnet.Control.token);
+        form.AddField("id_event", btn_manager_Magnet.Control.id_event);
+        form.AddField("id_peserta", btn_manager_Magnet.Control.id_peserta);
+        form.AddField("id_game", btn_manager_Magnet.Control.id_game);
+
+        //===========================================================================================================//
+
         form.AddField("level", LevelMain.text.ToString());
         form.AddField("score", json);
         
@@ -124,6 +146,7 @@ public class SendScoreApiLevel5BMagnet : MonoBehaviour
 
         if (uwr.isNetworkError)
         {
+            Loading.SetActive(false);
             Debug.Log("Error While Sending: " + uwr.error);
         }
         else

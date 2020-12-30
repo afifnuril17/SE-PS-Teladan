@@ -319,10 +319,6 @@ MonoBehaviour:
   namaPemain: {fileID: 156958037}
   waktuhabis: {fileID: 384552254}
   timer5: {fileID: 1962325578}
-  startTime: 0
-  t: 0
-  detik: 0
-  time: 0
   myInt: 0
 --- !u!1 &17669788
 GameObject:
@@ -6995,7 +6991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   token: 
-  id: 
+  id_peserta: 
   tokenText: {fileID: 1361770488}
   idText: {fileID: 986303029}
 --- !u!20 &519420031
@@ -11789,7 +11785,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1456719419}
+      - m_Target: {fileID: 0}
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -11914,7 +11910,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   token: 
-  id: 
+  id_peserta: 
+  id_event: 
+  id_game: 
+  scene: []
+  sceneInt: 0
   ide: {fileID: 0}
   alasan: {fileID: 0}
   tentang: {fileID: 0}
@@ -12002,6 +12002,7 @@ MonoBehaviour:
   labelnya: []
   inputan_text: []
   tanggal_text: []
+  game_id: 
 --- !u!1 &936846636
 GameObject:
   m_ObjectHideFlags: 0
@@ -14078,7 +14079,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1456719419}
+      objectReference: {fileID: 0}
     - target: {fileID: 7564739120840918127, guid: 3df2954d8a17bd343b3335e8a0380eb1,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -19415,7 +19416,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1456719419}
+      objectReference: {fileID: 0}
     - target: {fileID: 3019980412919850479, guid: 9af888ba3f01ded4c9e29e29c28bf90b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -20056,7 +20057,6 @@ GameObject:
   - component: {fileID: 1456719422}
   - component: {fileID: 1456719421}
   - component: {fileID: 1456719420}
-  - component: {fileID: 1456719419}
   - component: {fileID: 1456719423}
   - component: {fileID: 1456719424}
   m_Layer: 5
@@ -20066,25 +20066,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1456719419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456719418}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7b100e1fe533b4408cbf0c4da65427e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LevelMain: {fileID: 2145799558}
-  TimePlay: {fileID: 13057983}
-  TimeCocokan: {fileID: 1456719420}
-  tokenLogin: {fileID: 1361770488}
-  idLogin: {fileID: 986303029}
-  StatusBerhasil: {fileID: 1301247535}
-  waktuhabis: {fileID: 2083166531}
 --- !u!114 &1456719420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20248,6 +20229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7f5905d7c434a043b12e75f6c3403c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  namaPemain: {fileID: 156958037}
   LevelMain: {fileID: 2145799558}
   TimePlay: {fileID: 13057983}
   TimeCocokan: {fileID: 1456719420}
@@ -20255,6 +20237,9 @@ MonoBehaviour:
   idLogin: {fileID: 986303029}
   StatusBerhasil: {fileID: 1301247535}
   waktuhabis: {fileID: 2083166531}
+  cekOut: 90
+  myInt: 0
+  cek: 0
 --- !u!1 &1459636856
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,7 +32,7 @@ public class status_score : MonoBehaviour
         }
         else
         {
-            //Debug.Log("Score 0");
+            status.text = "0";
         }
     }
 }

@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ff4c7655272084daf482b2de8d686e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 1200
+  timeRemaining: 2400
   timerIsRunning: 0
   timeText: {fileID: 13057983}
   durasiMain: {fileID: 1616540052}
@@ -341,7 +341,6 @@ MonoBehaviour:
   namaPemain: {fileID: 247931441}
   detik: 0
   Tnya: {fileID: 548386779}
-  time: 0
   myInt: 0
 --- !u!114 &13057983
 MonoBehaviour:
@@ -16435,7 +16434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   token: 
-  id: 
+  id_peserta: 
   tokenText: {fileID: 284344088}
   idText: {fileID: 1312521981}
 --- !u!114 &519420034
@@ -27739,17 +27738,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 916400192}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 916400191}
         m_MethodName: Hide
         m_Mode: 1
@@ -28066,7 +28054,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   token: 
-  id: 
+  id_peserta: 
+  id_event: 
+  id_game: 
+  scene: []
+  sceneInt: 0
   ide: {fileID: 1261017483}
   alasan: {fileID: 785819389}
   tentang: {fileID: 0}
@@ -28154,6 +28146,7 @@ MonoBehaviour:
   labelnya: []
   inputan_text: []
   tanggal_text: []
+  game_id: 
 --- !u!4 &926598827
 Transform:
   m_ObjectHideFlags: 0
@@ -68431,7 +68424,7 @@ PrefabInstance:
     - target: {fileID: 8219525395870577912, guid: d2689a3564da3844db38fd15b82382a3,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000030517578
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8219525395870577912, guid: d2689a3564da3844db38fd15b82382a3,
         type: 3}
@@ -68518,6 +68511,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 582505204}
     m_Modifications:
+    - target: {fileID: 9129184555747379137, guid: cdec8df62eb6e964ea7bedbb8741e32f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1a0edd7c300a861438e6e06825e7fcc8,
+        type: 3}
     - target: {fileID: 9129184555747379142, guid: cdec8df62eb6e964ea7bedbb8741e32f,
         type: 3}
       propertyPath: m_LocalPosition.x

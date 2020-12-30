@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class getTokenMagnet : MonoBehaviour
 {
     public string token;
-    public string id;
+    public string id_peserta;
 
     public Text tokenText;
     public Text idText;
@@ -19,11 +19,11 @@ public class getTokenMagnet : MonoBehaviour
     public void tokenRead()
     {
         token = btn_manager_Magnet.Control.token;
-        id = btn_manager_Magnet.Control.id;
+        id_peserta = btn_manager_Magnet.Control.id_peserta;
 
         //Debug.Log("tes"+token);
 
         tokenText.text = token;
-        idText.text = id;
+        idText.text = id_peserta;
     }
 }
