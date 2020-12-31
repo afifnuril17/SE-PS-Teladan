@@ -62,8 +62,22 @@ public class SendScoreApiLevel5BMagnet : MonoBehaviour
         tex.ReadPixels(new Rect(0, 0, width, height), 0, 0);
         tex.Apply();
 
+        Texture2D tex2 = new Texture2D(tex.width / 2, tex.height / 2, TextureFormat.RGB24, true);
+
+        // Read screen contents into the texture
+        tex2.SetPixels(tex.GetPixels(1));
+
+        tex2.Apply();
+
+        Texture2D tex3 = new Texture2D(tex2.width / 2, tex2.height / 2, TextureFormat.RGB24, true);
+
+        // Read screen contents into the texture
+        tex3.SetPixels(tex2.GetPixels(1));
+
+        tex3.Apply();
+
         // Encode texture into PNG
-        byte[] bytes = tex.EncodeToJPG();
+        byte[] bytes = tex3.EncodeToPNG();
         string timeStamp = idLogin.text + "_" + namaPemain.text + "_" + LevelMain.text + "_checkout_" + tnya.ToString();
 
         // For testing purposes, also write to a file in the project folder

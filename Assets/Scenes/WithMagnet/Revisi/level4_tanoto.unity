@@ -326,13 +326,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waktuhabis: {fileID: 384552254}
   timer5: {fileID: 745454018}
-  startTime: 0
   LevelMain: {fileID: 2145799558}
   tokenLogin: {fileID: 1537789543}
   idLogin: {fileID: 1885267095}
   namaPemain: {fileID: 1649058262}
-  detik: 0
-  time: 0
   myInt: 0
 --- !u!114 &13057983
 MonoBehaviour:
@@ -11155,7 +11152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   token: 
-  id: 
+  id_peserta: 
   tokenText: {fileID: 1537789543}
   idText: {fileID: 1885267095}
 --- !u!114 &519420034
@@ -18906,7 +18903,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   token: 
-  id: 
+  id_peserta: 
+  id_event: 
+  id_game: 
+  scene: []
+  sceneInt: 0
   ide: {fileID: 0}
   alasan: {fileID: 0}
   tentang: {fileID: 0}
@@ -18960,32 +18961,6 @@ MonoBehaviour:
   labelAlamat: {fileID: 0}
   IdLogin: {fileID: 0}
   waktu_hampir_habis: {fileID: 745454018}
-  Nama: {fileID: 0}
-  Tgl_lahir: {fileID: 0}
-  Jenis_kelamin: {fileID: 0}
-  Pendidikan: {fileID: 0}
-  Tempat_Lahir: {fileID: 0}
-  Alamat: {fileID: 0}
-  Tgl_tes: {fileID: 0}
-  Kewarganegaraan: {fileID: 0}
-  Jabatan: {fileID: 0}
-  Departement: {fileID: 0}
-  Devisi: {fileID: 0}
-  Jenis_identitas: {fileID: 0}
-  Agama: {fileID: 0}
-  Email: {fileID: 0}
-  Institusi_pendidikan: {fileID: 0}
-  Jurusan: {fileID: 0}
-  Mengetahui_lowongan: {fileID: 0}
-  Penyakit_berat: {fileID: 0}
-  No_sipp: {fileID: 0}
-  No_telp: {fileID: 0}
-  NPM: {fileID: 0}
-  Tahun_masuk: {fileID: 0}
-  Tahun_lulus: {fileID: 0}
-  Status_Pernikahan: {fileID: 0}
-  Alamat_Identitas: {fileID: 0}
-  Alamat_Tinggal: {fileID: 0}
   warningIde: {fileID: 0}
   warningTentang: {fileID: 0}
   SkipText: {fileID: 458892536}
@@ -18994,6 +18969,7 @@ MonoBehaviour:
   labelnya: []
   inputan_text: []
   tanggal_text: []
+  game_id: 
 --- !u!1001 &933821624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45546,7 +45522,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level 4
+  m_Text: Level4
 --- !u!222 &2145799559
 CanvasRenderer:
   m_ObjectHideFlags: 0

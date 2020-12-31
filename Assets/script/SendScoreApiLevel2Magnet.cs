@@ -84,6 +84,7 @@ public class SendScoreApiLevel2Magnet : MonoBehaviour
 
         // Encode texture into PNG
         byte[] bytes = tex3.EncodeToPNG();
+
         string timeStamp = idLogin.text + "_" + namaPemain.text + "_" + LevelMain.text + "_checkout_" + tnya.ToString();
 
         // For testing purposes, also write to a file in the project folder

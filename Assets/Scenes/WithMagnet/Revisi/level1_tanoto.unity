@@ -502,7 +502,6 @@ MonoBehaviour:
   namaPemain: {fileID: 428830589}
   waktuhabis: {fileID: 384552254}
   timer5: {fileID: 1404193778}
-  startTime: 0
   myInt: 0
 --- !u!1 &16979325
 GameObject:
@@ -18822,32 +18821,6 @@ MonoBehaviour:
   labelAlamat: {fileID: 0}
   IdLogin: {fileID: 0}
   waktu_hampir_habis: {fileID: 1404193778}
-  Nama: {fileID: 0}
-  Tgl_lahir: {fileID: 0}
-  Jenis_kelamin: {fileID: 0}
-  Pendidikan: {fileID: 0}
-  Tempat_Lahir: {fileID: 0}
-  Alamat: {fileID: 0}
-  Tgl_tes: {fileID: 0}
-  Kewarganegaraan: {fileID: 0}
-  Jabatan: {fileID: 0}
-  Departement: {fileID: 0}
-  Devisi: {fileID: 0}
-  Jenis_identitas: {fileID: 0}
-  Agama: {fileID: 0}
-  Email: {fileID: 0}
-  Institusi_pendidikan: {fileID: 0}
-  Jurusan: {fileID: 0}
-  Mengetahui_lowongan: {fileID: 0}
-  Penyakit_berat: {fileID: 0}
-  No_sipp: {fileID: 0}
-  No_telp: {fileID: 0}
-  NPM: {fileID: 0}
-  Tahun_masuk: {fileID: 0}
-  Tahun_lulus: {fileID: 0}
-  Status_Pernikahan: {fileID: 0}
-  Alamat_Identitas: {fileID: 0}
-  Alamat_Tinggal: {fileID: 0}
   warningIde: {fileID: 0}
   warningTentang: {fileID: 0}
   SkipText: {fileID: 81833875}
@@ -35701,7 +35674,6 @@ MonoBehaviour:
   namaPemain: {fileID: 0}
   detik: 0
   Tnya: {fileID: 0}
-  time: 0
   myInt: 0
 --- !u!114 &1810955585
 MonoBehaviour:
@@ -41768,7 +41740,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level 1
+  m_Text: Level1
 --- !u!222 &2145799559
 CanvasRenderer:
   m_ObjectHideFlags: 0
